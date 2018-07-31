@@ -44,4 +44,8 @@ module.exports = {
       res.redirect('app/dashboard');
     });
   },
+  // com calback
+  signout(req, res) {
+    return req.session.destroy(() => res.redirect('/'));
+  },
 };
