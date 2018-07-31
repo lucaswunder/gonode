@@ -13,5 +13,6 @@ routes.use((req, res, next) => {
 routes.get('/', authController.signin);
 routes.get('/signup', authController.sigup);
 routes.post('/register', authController.register);
+routes.post('/authenticate', authController.authenticate);
 
 module.exports = routes;
