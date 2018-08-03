@@ -1,1 +1,27 @@
-<h1>Dash </h1>
+{% extends 'layouts/default.njk' %} {% block body %}
+
+<div class="wrapper">
+  <nav id="main">
+    <div class="header">
+      <strong>Minha biblioteca</strong>
+      <a href="/signout">Sair</a>
+    </div>
+
+    <div class="categories">
+      <strong>CATEGORIAS</strong>
+      <ul>
+        {% for category in categories %}
+        <li>
+          <a href="">
+            {{category.title}}
+            <span>{{category.Snippets.length}}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <a href="#" data-modal-open="#new-category">NOVA CATEGORIA</a>
+    </div>
+  </nav>
+</div>
+
+{% endblock%}
