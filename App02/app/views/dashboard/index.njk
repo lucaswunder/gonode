@@ -12,7 +12,7 @@
       <ul>
         {% for category in categories %}
         <li>
-          <a href="">
+          <a href="/app/categories/{{category.id}}">
             {{category.title}}
             <span>{{category.Snippets.length}}</span>
           </a>
@@ -22,6 +22,13 @@
       <a href="#" data-modal-open="#new-category">NOVA CATEGORIA</a>
     </div>
   </nav>
+  <div class="modal" id="new-category">
+    <form method="POST" action="/app/categories/create" class="modal-content">
+      <input type="text" name="title" placeholder="Título da categoria">
+      <button type="submit">Salvar Categoria</button>
+      <a href="#" data-modal-close="#new-category">Cancelar</a>
+    </form>
+  </div>
 </div>
 
 {% endblock%}
