@@ -4,7 +4,7 @@
 
   <section class="snippet-content">
     <div class="actions">
-      <a href="#" class="edit">Editar</a>
+      <a href="#" data-modal-open="#edit-snippet" class="edit">Editar</a>
 
       <form action="" method="POST">
         <button type="submit">Remover</button>
@@ -14,6 +14,19 @@
     <h1>{{currentSnippet.title}}</h1>
     <div class="content">{{currentSnippet.formattedContent | safe}}</div>
   </section>
+
+  <div class="modal" id="edit-snippet">
+    <form method="POST" action="/app/categories/{{activeCat}}/snippets/{{currentSnippet.id}}?_method=PUT" class="modal-content">
+      <input type="text" name="title" placeholder="titulo" value="{{currentSnippet.title}}">
+      <div class="container-content">
+        <textarea name="content" class="mde" placeholder="Texto">
+          {{currentSnippet.content}}
+        </textarea>
+      </div>
+      <button type="submit">Atualizar Snippet</button>
+      <a href="#" data-modal-close="#edit-snippet">Cancelar</a>
+    </form>
+  </div>
 </div>
 
 {%endblock%}
