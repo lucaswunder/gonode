@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
 const path = require('path');
-const flash = require('connect-flash');
 const session = require('express-session');
+const flash = require('connect-flash');
 const methodOverride = require('method-override');
 const routes = require('./app/routes');
 
